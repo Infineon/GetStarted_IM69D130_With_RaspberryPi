@@ -23,3 +23,7 @@ Result
 #### Best quality of sound recorded.
 #### While playing back volume is boosted.
 #### Whenever the raspberry pi will be switched on alsamixer needs to be configured (Volume to be raised after selecting the 		snd_rpi_card) then again record and now volume wil be boosted with increase in senstivity. 
+
+
+
+#### Issues related to noise getting recorded refer to [Wiki](https://github.com/Infineon/GetStarted_IM69D130_With_RaspberryPi/wiki)
