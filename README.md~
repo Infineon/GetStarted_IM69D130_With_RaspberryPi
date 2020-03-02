@@ -19,9 +19,9 @@
 
 ## Quick Start Guide
 
-### Preparation Raspberry Pi
+### Preparation of Raspberry Pi
 
-**You can skip this step, if you already have Raspbian installed on your compatible Raspberry Pi.**
+**You can **[skip](#software-setup)** this step, if you already have Raspbian installed on your compatible Raspberry Pi.**
 
 * Download Raspbian from [here](https://www.raspberrypi.org/downloads/raspbian/)
 * Unzip Raspbian and flash the image to an SD card. [Here](https://www.raspberrypi.org/documentation/installation/installing-images/) you find a step-by-step tutorial.
@@ -35,7 +35,7 @@
 For using your Raspberry Pi without a monitor, you need to create an empty file named `ssh` on the boot partition of the SD card.
 
 
-##### Automatic WiFi connection (optional if you have an ethernet connection)
+##### Automatic WiFi connection (optional, if you have an ethernet connection)
 Create a file `wpa_supplicant` according to [this](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md) guide.
 
 #### First login
@@ -52,7 +52,7 @@ passwd
 
 #### Enable I2S (Inter-IC-Sound) on your Raspberry Pi
 
-Open the file `/boot/config.txt` for writing with any text editor of your choice. For simplicity we use nano, which is pre-installed on Raspbian.
+Open the file `/boot/config.txt` for writing with any text editor of your choice. For simplicity we use *nano*, which is pre-installed on Raspbian:
 
 ```
 sudo nano /boot/config.txt
@@ -94,9 +94,9 @@ Let's do an intermediate check, if everything worked so far:
 lsmod | grep snd_soc_bcm2835_i2s
 ```
 
-If the output is not empty, all went well so far!
+**If the output of this command is not empty, all went well so far!**
 
-If you encounter any problems up to this step, please be sure that you use the newest version of Raspbian on a [supported hardware platform](#Supported Platforms). In case it still doesn't work, please consider trying the steps on a fresh Raspbian installation. If you still encounter problems, please feel free to open an [issue](https://github.com/Infineon/GetStarted_IM69D130_With_RaspberryPi/issues).
+If you encounter any problems up to this step, please be sure that you use the newest version of Raspbian on a [supported hardware platform](#supported-platforms). In case it still doesn't work, please consider trying the steps on a fresh Raspbian installation. If you still encounter problems, please feel free to open an [issue](https://github.com/Infineon/GetStarted_IM69D130_With_RaspberryPi/issues).
 
 #### Install I2S module
 
@@ -104,7 +104,7 @@ If you encounter any problems up to this step, please be sure that you use the n
 
 **If you have any important data on your Raspberry Pi, we recommend to do make a backup before continuing.**
 
-**Please make sure that your Raspberry Pi has a working internet connection.**
+**Please make sure that your Raspberry Pi has a working Internet connection.**
 
 We now need to install the tool `rpi-update`:
 
@@ -116,13 +116,15 @@ sudo rpi-update
 
 After about one minute the following prompt appears:
 
+```
 Would you like to proceed? (y/N)
+```
 
 Press *y* to continue the process. Make sure to inform yourself about the potential risks **before** you proceed.
 
 The subsequent updating process takes about 4 minutes.
 
-After the process has finished, please reboot your Raspberry Pi to activate the new firmware.
+After the process has finished, please reboot your Raspberry Pi to activate the new firmware:
 
 ```
 sudo reboot
@@ -143,7 +145,7 @@ sudo chmod +x /usr/bin/rpi-source
 rpi-source --skip-gcc
 ```
 
-The last command will take about 10 minutes on a Raspberry Pi 3 Mod. B+, so it's time to grab a coffee :)
+**The last command will take about 10 minutes on a Raspberry Pi 3 Mod. B+, so it's time to grab a coffee :)**
 
 If the following prompt appears (after about 7 minutes), please hit *Enter* to accept the default response:
 
@@ -215,6 +217,16 @@ and unplug the power cable.
 
 * Connect the IM69D130 Microphone Shield2Go to your Raspberry Pi
 
+Pin connection diagram:
+
+| Raspberry Pi | Microphone Shield2Go |
+| :---: |:---:|
+| 3.3V | 3V3 |
+| GND | GND |
+| DATA | BCM 20 |
+| BCLK | BCM 18 |
+| CLK | BCM 19 |
+
 * Power up your Raspberry Pi
 
 
@@ -234,7 +246,7 @@ You can record a wav file with this command:
 arecord -D plughw:1 -c2 -r 48000 -f S32_LE -t wav -V stereo test.wav
 ```
 
-By default, the sound level of the recording is very low, but so is the noise, hence you can easily amplify the output file e.g. using sox:
+By default, the sound level of the recording is very low, but so is the noise, hence you can easily amplify the output file e.g. using [sox](http://sox.sourceforge.net/):
 
 ```
 sudo apt-get install sox
