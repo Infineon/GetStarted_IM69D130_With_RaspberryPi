@@ -234,7 +234,7 @@ You can record a wav file with this command:
 arecord -D plughw:1 -c2 -r 48000 -f S32_LE -t wav -V stereo test.wav
 ```
 
-By default, the sound level of the recording is very low, but so is the noise, hence you can easily amplify the output file e.g. using [sox](http://sox.sourceforge.net/):
+By default, the sound level of the recording is very low, but so is the noise, hence you can easily amplify the output file e.g. using sox:
 
 ```
 sudo apt-get install sox
