@@ -217,9 +217,9 @@ and unplug the power cable.
 
 * Connect the IM69D130 Microphone Shield2Go to your Raspberry Pi
 
-Pin connection diagram:
+Pin connection:
 
-| Raspberry Pi | Microphone Shield2Go |
+| Microphone Shield2Go | Raspberry Pi |
 | :---: |:---:|
 | 3.3V | 3V3 |
 | GND | GND |
