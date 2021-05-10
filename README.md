@@ -1,10 +1,14 @@
+# Important
+
+**This tutorial is outdated. Please look [here](https://github.com/Infineon/i2s-microphone/wiki/Raspberry-Pi-Getting-Started) for the new tutorial.**
+
 # IM69D130 Stereo Microphone Shield2Go with Raspberry Pi
 
 ## Supported Platforms
 
 | Platform | Compatible |
 | --- |:---:|
-| Raspberry Pi 4 Mod. B | **tbd** |
+| Raspberry Pi 4 Mod. B | :x: |
 | Raspberry Pi 3 Mod. B+ | :heavy_check_mark: |
 | Raspberry Pi 3 Mod. B | :heavy_check_mark: |
 | Raspberry Pi 3 Mod. A+ | :heavy_check_mark: |
